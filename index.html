@@ -11,7 +11,6 @@
 
     <!-- Floating Hearts -->
     <div class="hearts">
-        <span>♡</span>
         <span>♥</span>
         <span>♡</span>
         <span>♥</span>
@@ -21,46 +20,46 @@
     </div>
 
 
-    <!-- =========================
-         OPENING SCREEN
-    ========================== -->
+    <!-- ================= PAGE 1 ================= -->
 
-    <section id="home" class="screen">
+    <section id="page1" class="page active">
 
-        <div class="small-text">
-            A little surprise for you...
+        <div class="content">
+
+            <div class="small-text">
+                A little surprise for you...
+            </div>
+
+            <h1>For My Thammudu</h1>
+
+            <h2>Irfan ❤️</h2>
+
+            <p class="intro">
+                There is something I wanted to tell you...
+            </p>
+
+            <button onclick="showPage2()">
+                Open My Letter 💌
+            </button>
+
         </div>
-
-        <h1>For My Thammudu</h1>
-
-        <h2>Irfan ❤️</h2>
-
-        <p>
-            Some feelings are difficult to say,<br>
-            so I decided to write them instead.
-        </p>
-
-        <button onclick="openLetter()">
-            Open My Letter 💌
-        </button>
 
     </section>
 
 
+    <!-- ================= PAGE 2 ================= -->
 
-    <!-- =========================
-         LETTER SCREEN
-    ========================== -->
+    <section id="page2" class="page">
 
-    <section id="letter" class="screen hidden">
-
-        <div class="letter-box">
+        <div class="letter">
 
             <div class="envelope">
                 💌
             </div>
 
-            <h2>Dear Irfan,</h2>
+            <p class="dear">
+                Dear Irfan,
+            </p>
 
             <p class="message">
                 No matter how much we fight or tease each other,<br>
@@ -71,8 +70,8 @@
                 Always my Thammudu 🫶
             </p>
 
-            <button onclick="nextSurprise()">
-                Next Surprise 🎁
+            <button onclick="showPage3()">
+                Next Surprise ✨
             </button>
 
         </div>
@@ -80,105 +79,84 @@
     </section>
 
 
+    <!-- ================= PAGE 3 ================= -->
 
-    <!-- =========================
-         PHOTO SCREEN
-    ========================== -->
+    <section id="page3" class="page">
 
-    <section id="photos" class="photos hidden">
+        <div class="memories">
 
-        <div class="photo-title">
+            <h1>Our Memories 📸</h1>
 
-            <div class="gift">
-                🎁
-            </div>
-
-            <h2>Our Little Memories 📸</h2>
-
-            <p>
-                Because some memories are too special to forget. ❤️
+            <p class="subtitle">
+                Some moments are worth keeping forever. ❤️
             </p>
 
-        </div>
+
+            <div class="photos">
+
+                <!-- IRFAN PHOTO -->
+
+                <div class="photo-card">
+
+                    <img src="irfu.jpeg" alt="Irfan">
+
+                    <p>
+                        My Thammudu ❤️
+                    </p>
+
+                </div>
 
 
-        <div class="photo-container">
+                <!-- BOTH PHOTO -->
 
+                <div class="photo-card">
 
-            <!-- IRFAN PHOTO -->
+                    <img src="both.jpeg" alt="Our Memory">
 
-            <div class="photo-card">
+                    <p>
+                        Our Memory 🫶
+                    </p>
 
-                <img src="irfu.jpeg" alt="Irfan">
-
-                <h3>
-                    My Thammudu ❤️
-                </h3>
-
-            </div>
-
-
-
-            <!-- BOTH PHOTO -->
-
-            <div class="photo-card">
-
-                <img src="both.jpeg" alt="Our Memory">
-
-                <h3>
-                    Our Memory 🫶
-                </h3>
+                </div>
 
             </div>
 
 
-        </div>
+            <div class="final-message">
 
+                <p>
+                    No matter where life takes us,<br>
+                    you'll always be my Thammudu. ❤️
+                    Please Don't leave me ra thammudu.
+            		Really missing you....
+                </p>
 
-        <div class="final-message">
-
-            <p>
-                No matter where life takes us,<br>
-                you'll always be my Thammudu. ❤️
-            </p>
+            </div>
 
         </div>
 
     </section>
 
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
     <script>
 
-        function openLetter() {
+        function showPage2() {
 
-            document.getElementById("home").classList.add("hidden");
+            document.getElementById("page1").classList.remove("active");
 
-            document.getElementById("letter").classList.remove("hidden");
+            document.getElementById("page2").classList.add("active");
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
+            window.scrollTo(0, 0);
         }
 
 
-        function nextSurprise() {
+        function showPage3() {
 
-            document.getElementById("letter").classList.add("hidden");
+            document.getElementById("page2").classList.remove("active");
 
-            document.getElementById("photos").classList.remove("hidden");
+            document.getElementById("page3").classList.add("active");
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
+            window.scrollTo(0, 0);
         }
 
     </script>
