@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>For My Thammudu ❤️</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,21 +17,25 @@
         <span>♥</span>
         <span>♡</span>
         <span>♥</span>
+        <span>♡</span>
     </div>
 
 
-    <!-- FIRST PAGE -->
-    <section class="hero">
+    <!-- =========================
+         OPENING SCREEN
+    ========================== -->
+
+    <section id="home" class="screen">
 
         <div class="small-text">
-            A little something for you...
+            A little surprise for you...
         </div>
 
         <h1>For My Thammudu</h1>
 
         <h2>Irfan ❤️</h2>
 
-        <p class="intro">
+        <p>
             Some feelings are difficult to say,<br>
             so I decided to write them instead.
         </p>
@@ -45,10 +47,14 @@
     </section>
 
 
-    <!-- LETTER -->
-    <section id="letter" class="letter-section">
 
-        <div class="letter">
+    <!-- =========================
+         LETTER SCREEN
+    ========================== -->
+
+    <section id="letter" class="screen hidden">
+
+        <div class="letter-box">
 
             <div class="envelope">
                 💌
@@ -56,20 +62,17 @@
 
             <h2>Dear Irfan,</h2>
 
-            <!-- TWO LINE HEARTFELT MESSAGE -->
             <p class="message">
                 No matter how much we fight or tease each other,<br>
                 you'll always have a special place in my heart. ❤️
-				Please Don't leave me ra thammudu.
-				Really missing you.
             </p>
 
             <p class="signature">
                 Always my Thammudu 🫶
             </p>
 
-            <button onclick="showPhotos()">
-                See Our Memories 📸
+            <button onclick="nextSurprise()">
+                Next Surprise 🎁
             </button>
 
         </div>
@@ -77,19 +80,33 @@
     </section>
 
 
-    <!-- PHOTOS -->
-    <section id="photos" class="photos-section">
 
-        <h2>Our Memories 📸</h2>
+    <!-- =========================
+         PHOTO SCREEN
+    ========================== -->
 
-        <p class="photo-intro">
-            Two pictures, countless memories. ❤️
-        </p>
+    <section id="photos" class="photos hidden">
+
+        <div class="photo-title">
+
+            <div class="gift">
+                🎁
+            </div>
+
+            <h2>Our Little Memories 📸</h2>
+
+            <p>
+                Because some memories are too special to forget. ❤️
+            </p>
+
+        </div>
 
 
         <div class="photo-container">
 
+
             <!-- IRFAN PHOTO -->
+
             <div class="photo-card">
 
                 <img src="irfu.jpeg" alt="Irfan">
@@ -101,7 +118,9 @@
             </div>
 
 
-            <!-- BOTH OF YOU -->
+
+            <!-- BOTH PHOTO -->
+
             <div class="photo-card">
 
                 <img src="both.jpeg" alt="Our Memory">
@@ -112,45 +131,54 @@
 
             </div>
 
+
         </div>
 
 
-        <p class="ending">
-            No matter where life takes us,<br>
-            you'll always be my Thammudu. ❤️
-        </p>
+        <div class="final-message">
+
+            <p>
+                No matter where life takes us,<br>
+                you'll always be my Thammudu. ❤️
+            </p>
+
+        </div>
 
     </section>
 
 
-    <!-- JAVASCRIPT -->
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script>
 
         function openLetter() {
 
-            document.getElementById("letter").style.display = "flex";
+            document.getElementById("home").classList.add("hidden");
 
-            setTimeout(function() {
+            document.getElementById("letter").classList.remove("hidden");
 
-                document.getElementById("letter").scrollIntoView({
-                    behavior: "smooth"
-                });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-            }, 200);
         }
 
 
-        function showPhotos() {
+        function nextSurprise() {
 
-            document.getElementById("photos").style.display = "block";
+            document.getElementById("letter").classList.add("hidden");
 
-            setTimeout(function() {
+            document.getElementById("photos").classList.remove("hidden");
 
-                document.getElementById("photos").scrollIntoView({
-                    behavior: "smooth"
-                });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-            }, 200);
         }
 
     </script>
