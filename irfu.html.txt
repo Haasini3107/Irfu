@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Thammudu ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="heart heart1">♥</div>
+    <div class="heart heart2">♥</div>
+    <div class="heart heart3">♥</div>
+    <div class="heart heart4">♥</div>
+    <div class="heart heart5">♥</div>
+
+    <!-- Opening Screen -->
+    <div class="container">
+
+        <h1>For My Thammudu ❤️</h1>
+
+        <h2>Irfan</h2>
+
+        <p class="intro">
+            Some people are special without even trying.
+        </p>
+
+        <button onclick="openLetter()">Open My Letter 💌</button>
+
+        <!-- Letter -->
+        <div id="letter">
+
+            <h2>Dear Irfan,</h2>
+
+            <p>
+                No matter how much we fight or tease each other,<br>
+                you'll always have a special place in my heart. ❤️
+		Please Don't leave me ra thammudu.
+		Really missing you.
+
+            </p>
+
+            <p class="love">
+                Always my Thammudu. 🫶
+            </p>
+
+        </div>
+	
+	<div class="photos">
+
+    <div class="photo-card">
+        <img src="irfu.jpeg" alt ="Thammudu">
+        <p>My Thammudu ❤️</p>
+    </div>
+
+    <div class="photo-card">
+        <img src="both.jpeg" alt= "Akka Thammudu">
+        <p>Our Memory 🫶</p>
+    </div>
+
+</div>
+        <p class="ending">
+            Made with love for my Thammudu, Irfan ❤️
+        </p>
+
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById("letter").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
