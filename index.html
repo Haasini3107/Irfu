@@ -3,74 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>For My Thammudu ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- Floating Hearts -->
-    <div class="heart heart1">♥</div>
-    <div class="heart heart2">♥</div>
-    <div class="heart heart3">♥</div>
-    <div class="heart heart4">♥</div>
-    <div class="heart heart5">♥</div>
+    <div class="hearts">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+    </div>
 
-    <!-- Opening Screen -->
-    <div class="container">
 
-        <h1>For My Thammudu ❤️</h1>
+    <!-- FIRST PAGE -->
+    <section class="hero">
 
-        <h2>Irfan</h2>
+        <div class="small-text">
+            A little something for you...
+        </div>
+
+        <h1>For My Thammudu</h1>
+
+        <h2>Irfan ❤️</h2>
 
         <p class="intro">
-            Some people are special without even trying.
+            Some feelings are difficult to say,<br>
+            so I decided to write them instead.
         </p>
 
-        <button onclick="openLetter()">Open My Letter 💌</button>
+        <button onclick="openLetter()">
+            Open My Letter 💌
+        </button>
 
-        <!-- Letter -->
-        <div id="letter">
+    </section>
+
+
+    <!-- LETTER -->
+    <section id="letter" class="letter-section">
+
+        <div class="letter">
+
+            <div class="envelope">
+                💌
+            </div>
 
             <h2>Dear Irfan,</h2>
 
-            <p>
+            <!-- TWO LINE HEARTFELT MESSAGE -->
+            <p class="message">
                 No matter how much we fight or tease each other,<br>
                 you'll always have a special place in my heart. ❤️
-		Please Don't leave me ra thammudu.
-		Really missing you.
-
+				Please Don't leave me ra thammudu.
+				Really missing you.
             </p>
 
-            <p class="love">
-                Always my Thammudu. 🫶
+            <p class="signature">
+                Always my Thammudu 🫶
             </p>
+
+            <button onclick="showPhotos()">
+                See Our Memories 📸
+            </button>
 
         </div>
-	
-	<div class="photos">
 
-    <div class="photo-card">
-        <img src="irfu.jpeg" alt ="Thammudu">
-        <p>My Thammudu ❤️</p>
-    </div>
+    </section>
 
-    <div class="photo-card">
-        <img src="both.jpeg" alt= "Akka Thammudu">
-        <p>Our Memory 🫶</p>
-    </div>
 
-</div>
-        <p class="ending">
-            Made with love for my Thammudu, Irfan ❤️
+    <!-- PHOTOS -->
+    <section id="photos" class="photos-section">
+
+        <h2>Our Memories 📸</h2>
+
+        <p class="photo-intro">
+            Two pictures, countless memories. ❤️
         </p>
 
-    </div>
 
+        <div class="photo-container">
+
+            <!-- IRFAN PHOTO -->
+            <div class="photo-card">
+
+                <img src="irfu.jpeg" alt="Irfan">
+
+                <h3>
+                    My Thammudu ❤️
+                </h3>
+
+            </div>
+
+
+            <!-- BOTH OF YOU -->
+            <div class="photo-card">
+
+                <img src="both.jpeg" alt="Our Memory">
+
+                <h3>
+                    Our Memory 🫶
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <p class="ending">
+            No matter where life takes us,<br>
+            you'll always be my Thammudu. ❤️
+        </p>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
     <script>
+
         function openLetter() {
-            document.getElementById("letter").style.display = "block";
+
+            document.getElementById("letter").style.display = "flex";
+
+            setTimeout(function() {
+
+                document.getElementById("letter").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }, 200);
         }
+
+
+        function showPhotos() {
+
+            document.getElementById("photos").style.display = "block";
+
+            setTimeout(function() {
+
+                document.getElementById("photos").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }, 200);
+        }
+
     </script>
 
 </body>
