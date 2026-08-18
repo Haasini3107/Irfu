@@ -5,153 +5,38 @@
 }
 
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
 }
 
 
 body {
-
-    min-height: 100vh;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: Georgia, "Times New Roman", serif;
 
     color: white;
 
     background:
         radial-gradient(
             circle at top,
-            #6b2855,
-            #321331 45%,
-            #110711 100%
+            #68264f,
+            #2b102f 55%,
+            #100713
         );
 
     overflow-x: hidden;
 }
 
 
-
 /* =========================
-   FLOATING HEARTS
+   PAGES
 ========================= */
 
-.hearts span {
-
-    position: fixed;
-
-    bottom: -60px;
-
-    font-size: 28px;
-
-    opacity: 0;
-
-    z-index: 0;
-
-    animation:
-        floating 9s linear infinite;
-}
-
-
-.hearts span:nth-child(1) {
-
-    left: 8%;
-
-    animation-delay: 0s;
-}
-
-
-.hearts span:nth-child(2) {
-
-    left: 22%;
-
-    animation-delay: 2s;
-}
-
-
-.hearts span:nth-child(3) {
-
-    left: 38%;
-
-    animation-delay: 4s;
-}
-
-
-.hearts span:nth-child(4) {
-
-    left: 53%;
-
-    animation-delay: 1s;
-}
-
-
-.hearts span:nth-child(5) {
-
-    left: 68%;
-
-    animation-delay: 3s;
-}
-
-
-.hearts span:nth-child(6) {
-
-    left: 82%;
-
-    animation-delay: 5s;
-}
-
-
-.hearts span:nth-child(7) {
-
-    left: 94%;
-
-    animation-delay: 6s;
-}
-
-
-@keyframes floating {
-
-    0% {
-
-        transform:
-            translateY(0)
-            scale(0.8);
-
-        opacity: 0;
-    }
-
-
-    20% {
-
-        opacity: 0.7;
-    }
-
-
-    100% {
-
-        transform:
-            translateY(-110vh)
-            scale(1.5);
-
-        opacity: 0;
-    }
-}
-
-
-
-/* =========================
-   COMMON SCREEN
-========================= */
-
-.screen {
-
+.page {
     min-height: 100vh;
 
-    display: flex;
-
-    flex-direction: column;
+    display: none;
 
     justify-content: center;
 
@@ -163,69 +48,155 @@ body {
 
     position: relative;
 
-    z-index: 1;
-
-    animation: fadeIn 1s ease;
+    z-index: 2;
 }
 
 
-.hidden {
+.page.active {
+    display: flex;
 
-    display: none !important;
+    animation: pageIn 1s ease;
 }
 
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 /* =========================
-   OPENING PAGE
+   FLOATING HEARTS
 ========================= */
 
-.small-text {
+.hearts span {
+    position: fixed;
 
-    font-size: 15px;
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    z-index: 1;
+
+    animation: floatingHeart 8s linear infinite;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 43%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 62%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 78%;
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 92%;
+    animation-delay: 5s;
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+.content {
+    max-width: 700px;
+}
+
+
+.small-text {
+    font-size: 14px;
 
     letter-spacing: 4px;
 
-    opacity: 0.7;
+    text-transform: uppercase;
 
-    margin-bottom: 22px;
+    opacity: 0.65;
+
+    margin-bottom: 25px;
 }
 
 
-.screen h1 {
-
-    font-size:
-        clamp(45px, 9vw, 80px);
+.content h1 {
+    font-size: clamp(45px, 8vw, 80px);
 
     font-weight: normal;
 
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 
-.screen h2 {
-
-    font-size: 32px;
+.content h2 {
+    font-size: 34px;
 
     font-weight: normal;
 
-    color: #ffb6cf;
+    color: #ffb6ce;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 
-.screen > p {
-
+.intro {
     font-size: 19px;
 
     line-height: 1.8;
 
-    opacity: 0.85;
+    opacity: 0.8;
 
     margin-bottom: 35px;
 }
-
 
 
 /* =========================
@@ -233,203 +204,116 @@ body {
 ========================= */
 
 button {
-
     border: none;
 
-    padding:
-        16px 32px;
+    padding: 16px 34px;
 
     border-radius: 50px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ed668c,
-            #c8426c
-        );
+    background: #e85d83;
 
     color: white;
 
-    font-size: 17px;
+    font-family: Georgia, serif;
 
-    font-family:
-        Georgia,
-        serif;
+    font-size: 17px;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px
-        rgba(232, 93, 131, 0.35);
+        0 10px 35px rgba(232, 93, 131, 0.35);
 
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
 
 button:hover {
+    transform: scale(1.07);
 
-    transform:
-        translateY(-4px)
-        scale(1.05);
+    background: #f46d91;
 
     box-shadow:
-        0 15px 40px
-        rgba(232, 93, 131, 0.5);
+        0 15px 40px rgba(232, 93, 131, 0.5);
 }
 
 
-
 /* =========================
-   LETTER
+   PAGE 2 - LETTER
 ========================= */
 
-.letter-box {
-
+.letter {
     width: 100%;
 
     max-width: 650px;
 
-    padding:
-        60px 35px;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.15);
+    padding: 65px 35px;
 
     border-radius: 30px;
 
-    backdrop-filter:
-        blur(15px);
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(15px);
 
     box-shadow:
-        0 25px 70px
-        rgba(0,0,0,0.4);
-
-    animation:
-        letterOpen 1s ease;
+        0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 
 .envelope {
-
     font-size: 60px;
-
-    margin-bottom: 20px;
-
-    animation:
-        gentleBounce 2s infinite;
-}
-
-
-.letter-box h2 {
-
-    font-size: 34px;
-
-    color: white;
-
-    margin-bottom: 30px;
-}
-
-
-.message {
-
-    font-size: 20px;
-
-    line-height: 2;
-
-    color: #ffe5ee;
 
     margin-bottom: 25px;
 }
 
 
-.signature {
+.dear {
+    font-size: 28px;
 
-    font-size: 21px;
+    margin-bottom: 30px;
+
+    color: #ffd1df;
+}
+
+
+.message {
+    font-size: 20px;
+
+    line-height: 2;
+
+    color: #ffe8ef;
+}
+
+
+.signature {
+    margin-top: 30px;
+
+    margin-bottom: 40px;
+
+    font-size: 20px;
 
     color: #ffabc5;
-
-    margin-bottom: 35px;
 }
-
-
-@keyframes letterOpen {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(50px)
-            scale(0.9);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-@keyframes gentleBounce {
-
-    0%, 100% {
-
-        transform:
-            translateY(0);
-    }
-
-    50% {
-
-        transform:
-            translateY(-8px);
-    }
-}
-
 
 
 /* =========================
-   PHOTOS
+   PAGE 3 - MEMORIES
 ========================= */
 
-.photos {
+.memories {
+    width: 100%;
 
-    min-height: 100vh;
+    max-width: 900px;
 
-    padding:
-        80px 20px;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 2;
-
-    animation:
-        fadeIn 1.2s ease;
+    padding: 40px 10px;
 }
 
 
-.gift {
-
-    font-size: 55px;
-
-    margin-bottom: 15px;
-}
-
-
-.photo-title h2 {
-
-    font-size: 40px;
+.memories h1 {
+    font-size: 48px;
 
     font-weight: normal;
 
@@ -437,18 +321,18 @@ button:hover {
 }
 
 
-.photo-title p {
-
-    font-size: 17px;
+.subtitle {
+    font-size: 18px;
 
     opacity: 0.75;
 
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 
-.photo-container {
+/* PHOTOS */
 
+.photos {
     display: flex;
 
     justify-content: center;
@@ -462,96 +346,66 @@ button:hover {
 
 
 .photo-card {
-
     width: 300px;
 
-    padding: 15px;
+    padding: 14px;
 
     background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.12);
+        rgba(255, 255, 255, 0.09);
 
     border-radius: 25px;
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(12px);
 
     box-shadow:
-        0 20px 50px
-        rgba(0,0,0,0.4);
+        0 20px 45px rgba(0, 0, 0, 0.35);
 
-    transition:
-        transform 0.4s;
+    transition: 0.4s;
 }
 
 
 .photo-card:hover {
-
     transform:
-        translateY(-12px)
+        translateY(-10px)
         rotate(1deg);
 }
 
 
 .photo-card img {
-
     width: 100%;
 
     height: 350px;
 
     object-fit: cover;
 
-    border-radius: 18px;
-
     display: block;
+
+    border-radius: 18px;
 }
 
 
-.photo-card h3 {
-
+.photo-card p {
     font-size: 20px;
-
-    font-weight: normal;
 
     margin-top: 18px;
 
-    color: #ffd1df;
+    margin-bottom: 8px;
+
+    color: #ffd0df;
 }
 
 
-
-/* =========================
-   FINAL MESSAGE
-========================= */
+/* FINAL MESSAGE */
 
 .final-message {
+    margin-top: 60px;
 
-    margin-top: 70px;
-
-    font-size: 20px;
+    font-size: 19px;
 
     line-height: 2;
 
     color: #ffc5d7;
 }
-
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-    }
-
-    to {
-
-        opacity: 1;
-    }
-}
-
 
 
 /* =========================
@@ -560,45 +414,37 @@ button:hover {
 
 @media (max-width: 600px) {
 
-    .screen h1 {
-
+    .content h1 {
         font-size: 45px;
     }
 
 
-    .screen h2 {
-
-        font-size: 27px;
+    .content h2 {
+        font-size: 28px;
     }
 
 
-    .screen > p {
-
+    .intro {
         font-size: 17px;
     }
 
 
-    .letter-box {
-
-        padding:
-            45px 20px;
+    .letter {
+        padding: 50px 22px;
     }
 
 
     .message {
-
         font-size: 17px;
     }
 
 
-    .photo-title h2 {
-
-        font-size: 32px;
+    .memories h1 {
+        font-size: 38px;
     }
 
 
     .photo-card {
-
         width: 90%;
 
         max-width: 320px;
@@ -606,7 +452,6 @@ button:hover {
 
 
     .photo-card img {
-
         height: 350px;
     }
 
