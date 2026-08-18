@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #64254f,
+            #2a102f 50%,
+            #100713
+        );
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts span {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.6;
+
+    animation: floatHeart 8s linear infinite;
+
+    z-index: 0;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 78%;
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   FIRST SCREEN
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.small-text {
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+
+.hero h2 {
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    color: #ffb6ce;
+
+    margin-bottom: 30px;
+}
+
+
+.intro {
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    opacity: 0.85;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    background: #e85d83;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(232, 93, 131, 0.3);
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+
+    transform: translateY(-4px) scale(1.04);
+
+    background: #f06d91;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.letter {
+
+    max-width: 650px;
+
+    width: 100%;
+
+    padding: 60px 35px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+
+    animation: letterAppear 1s ease;
+}
+
+
+.envelope {
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+
+.letter h2 {
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+}
+
+
+.message {
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    color: #ffe4ec;
+}
+
+
+.signature {
+
+    margin: 30px 0;
+
+    font-size: 20px;
+
+    color: #ffabc5;
+}
+
+
+@keyframes letterAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos-section {
+
+    display: none;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.photos-section h2 {
+
+    font-size: 40px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+
+.photo-intro {
+
+    opacity: 0.7;
+
+    margin-bottom: 45px;
+
+    font-size: 17px;
+}
+
+
+.photo-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+.photo-card {
+
+    width: 300px;
+
+    padding: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition: 0.4s;
+}
+
+
+.photo-card:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(1deg);
+}
+
+
+.photo-card img {
+
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    display: block;
+}
+
+
+.photo-card h3 {
+
+    margin-top: 18px;
+
+    font-size: 20px;
+
+    font-weight: normal;
+}
+
+
+.ending {
+
+    margin-top: 70px;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: #ffc6d7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+
+        font-size: 45px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 27px;
+    }
+
+
+    .intro {
+
+        font-size: 17px;
+    }
+
+
+    .letter {
+
+        padding: 45px 20px;
+    }
+
+
+    .message {
+
+        font-size: 17px;
+    }
+
+
+    .photo-card {
+
+        width: 90%;
+
+        max-width: 320px;
+    }
+
+
+    .photo-card img {
+
+        height: 350px;
+    }
+
+}
